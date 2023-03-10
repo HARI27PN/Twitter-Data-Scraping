@@ -9,7 +9,7 @@ option = st.selectbox('How do you want to perform the data search? You can selec
 word = st.text_input('Please enter a '+option, 'Enter Text Here')
 start = st.date_input("Select the Start Date", datetime.date(2022, 1, 1),key='d1')
 end = st.date_input("Select the End Date", datetime.date(2023, 1, 1),key='d2')
-tweet_c = st.slider('What is the quantity of tweets you desire to gather?', 0, 2000, 5)
+tweet_c = st.slider('What is the quantity of tweets you desire to gather?', 0, 2000, 10)
 tweets_list = []
 
 # SCRAPE DATA USING TwitterSearchScraper
