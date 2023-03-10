@@ -5,11 +5,11 @@ import datetime
 
 tweets_df = pd.DataFrame()
 st.write("# TWITTER DATA SCRAPING")
-option = st.selectbox('How would you like the data to be searched?',('Keyword', 'Hashtag'))
+option = st.selectbox('How do you want to perform the data search? You can select either "Keyword" or "Hashtag" as the search option.',('Keyword', 'Hashtag'))
 word = st.text_input('Please enter a '+option, 'Enter Text Here')
-start = st.date_input("Select the start date", datetime.date(2022, 1, 1),key='d1')
-end = st.date_input("Select the end date", datetime.date(2023, 1, 1),key='d2')
-tweet_c = st.slider('How many tweets to scrape', 0, 1000, 5)
+start = st.date_input("Select the Start Date", datetime.date(2022, 1, 1),key='d1')
+end = st.date_input("Select the End Date", datetime.date(2023, 1, 1),key='d2')
+tweet_c = st.slider('What is the quantity of tweets you desire to gather?', 0, 2000, 5)
 tweets_list = []
 
 # SCRAPE DATA USING TwitterSearchScraper
@@ -60,11 +60,11 @@ if not tweets_df.empty:
         y=st.button('Show Tweets',key=2)
 
 if c:
-    st.success("The Scraped Data is Downloaded as .CSV file:",icon="✅")  
+    st.success("The Scraped data is Downloaded as .CSV file",icon="✅")  
 if j:
-    st.success("The Scraped Data is Downloaded as .JSON file",icon="✅")     
+    st.success("The Scraped data is Downloaded as .JSON file",icon="✅")     
 if x: # DISPLAY
-    st.success("The Scraped Data is:",icon="✅")
+    st.success("The Scraped data is:",icon="✅")
     st.write(tweets_df)
 if y: # DISPLAY
     st.balloons()
