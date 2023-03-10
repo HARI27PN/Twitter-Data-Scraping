@@ -27,7 +27,7 @@ if word:
             tweets_list.append([ tweet.id, tweet.date,  tweet.content, tweet.lang, tweet.user.username, tweet.replyCount, tweet.retweetCount,tweet.likeCount, tweet.source, tweet.url ])
         tweets_df = pd.DataFrame(tweets_list, columns=['ID','Date','Content', 'Language', 'Username', 'ReplyCount', 'RetweetCount', 'LikeCount','Source', 'Url'])
 else:
-    st.warning(option,' cant be empty', icon="⚠️")
+    st.warning(option,' cant be empty')
 
 # Creating Sidebar 
 with st.sidebar:   
@@ -60,13 +60,13 @@ if not tweets_df.empty:
         y=st.button('Show Tweets',key=2)
 
 if c:
-    st.success("The Scraped data is Downloaded as .CSV file",icon="✅")  
+    st.success("The Scraped data is Downloaded as .CSV file")  
 if j:
-    st.success("The Scraped data is Downloaded as .JSON file",icon="✅")     
+    st.success("The Scraped data is Downloaded as .JSON file")     
 if x: # DISPLAY
-    st.success("The Scraped data is:",icon="✅")
+    st.success("The Scraped data is:")
     st.write(tweets_df)
 if y: # DISPLAY
     st.balloons()
-    st.success("Tweets Scraped Successfully:",icon="✅")
+    st.success("Tweets Scraped Successfully:")
     st.write(tweets_df)
