@@ -8,7 +8,7 @@ st.write("# TWITTER DATA SCRAPING")
 option = st.selectbox('How do you want to perform the data search? You can select either "Keyword" or "Hashtag" as the search option.',('Keyword', 'Hashtag'))
 word = st.text_input('Please enter a '+option, 'Enter Text Here')
 start = st.date_input("Select the Start Date", datetime.date(2022, 12, 27),key='d1')
-end = st.date_input("Select the End Date", datetime.date(2023, 03, 10),key='d2')
+end = st.date_input("Select the End Date", datetime.date(2023, 3, 10),key='d2')
 tweet_c = st.slider('What is the quantity of tweets you desire to gather?', 0, 2000, 100)
 tweets_list = []
 
