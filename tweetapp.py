@@ -7,12 +7,12 @@ tweets_df = pd.DataFrame()
 st.write("# TWITTER DATA SCRAPING")
 option = st.selectbox('How do you want to perform the data search? You can select either "Keyword" or "Hashtag" as the search option.',('Keyword', 'Hashtag'))
 word = st.text_input('Please enter a '+option, 'Enter Text Here')
-start = st.date_input("Select the Start Date", datetime.date(2022, 1, 1),key='d1')
-end = st.date_input("Select the End Date", datetime.date(2023, 1, 1),key='d2')
+start = st.date_input("Select the Start Date", datetime.date(2022, 12, 27),key='d1')
+end = st.date_input("Select the End Date", datetime.date(2023, 03, 10),key='d2')
 tweet_c = st.slider('What is the quantity of tweets you desire to gather?', 0, 2000, 100)
 tweets_list = []
 
-# SCRAPE DATA USING TwitterSearchScraper
+# Scraping using the TwitterSearchScraper
 if word:
     if option=='Keyword':
         for i,tweet in enumerate(sntwitter.TwitterSearchScraper(f'{word} + since:{start} until:{end}').get_items()):
@@ -29,9 +29,9 @@ if word:
 else:
     st.warning(option,' cant be empty', icon="⚠️")
 
-#SIDEBAR
+# Creating Sidebar 
 with st.sidebar:   
-    st.info('DETAILS', icon="ℹ️")
+    st.info('DETAILS ENTERED')
     if option=='Keyword':
         st.info('Keyword is '+word)
     else:
@@ -42,8 +42,8 @@ with st.sidebar:
     st.info("Total Tweets Scraped "+str(len(tweets_df)))
     x=st.button('Show Tweets',key=1)
 
-# DOWNLOAD AS CSV
-@st.cache # IMPORTANT: Cache the conversion to prevent computation on every rerun
+# DOWNLOAD In CSV Format
+@st.cache # Cache is required for conversion to prevent computation on every rerun
 def convert_df(df):    
     return df.to_csv().encode('utf-8')
 
