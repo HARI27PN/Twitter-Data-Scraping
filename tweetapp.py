@@ -1,8 +1,11 @@
+$ pip install streamlit --upgrade
 import snscrape.modules.twitter as sntwitter
 import pandas as pd
 import streamlit as st
 
 import datetime
+!pip install --upgrade pip
+# !python -m pip install --upgrade pip
 
 tweets_df = pd.DataFrame()
 st.write("# TWITTER DATA SCRAPING")
