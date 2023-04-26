@@ -49,17 +49,16 @@ def convert_df(df):
 
 if not tweets_df.empty:
     col1, col2, col3 = st.columns(3)
-    with col1: # SHOW
-        y=st.button('Show Tweets',key=2)
-    with col2:
+    with col1:
         csv = convert_df(tweets_df) # CSV
-        c=st.download_button(label="Download data as CSV",data=csv,file_name='Twitter_data.csv',mime='text/csv',)        
-    with col3:    # JSON
+        c=st.download_button(label="Download data as CSV",data=csv,file_name='Twitter_data.csv',mime='text/csv',)
+    with col2:    # JSON
         json_string = tweets_df.to_json(orient ='records')
         j=st.download_button(label="Download data as JSON",file_name="Twitter_data.json",mime="application/json",data=json_string,)
 
-
-
+    with col3: # SHOW
+        y=st.button('Show Tweets',key=2)    
+   
 if c:
     st.success("The Scraped data is Downloaded as .CSV file")  
 if j:
