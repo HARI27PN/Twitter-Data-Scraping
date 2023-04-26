@@ -1,6 +1,3 @@
-pip install --upgrade pip
-pip install --upgrade snscrape
-
 import snscrape.modules.twitter as sntwitter
 import pandas as pd
 import streamlit as st
