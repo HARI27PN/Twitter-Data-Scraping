@@ -1,7 +1,7 @@
 import snscrape.modules.twitter as sntwitter
 import pandas as pd
 import streamlit as st
-pip install streamlit --upgrade
+- pip install streamlit --upgrade
 import datetime
 
 tweets_df = pd.DataFrame()
