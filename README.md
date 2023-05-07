@@ -1,8 +1,11 @@
 # Twitter_Data_Scraping
 
-App Link - link will be posted soon
+Streamlit App Link ⬇️
 
-Refer to the guidelines for the project
+link will be posted soon
+
+Refer to the guidelines for the project ⬇️
+
 https://docs.google.com/document/d/1inK3CTUDMcaNuPEN5aX_RD4ttKF2ogY_/edit?usp=sharing&ouid=104970222914596366601&rtpof=true&sd=true
 
 I have scraped the data from Twitter here using Streamlit.
