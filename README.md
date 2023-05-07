@@ -8,7 +8,7 @@ Refer to the guidelines for the project ⬇️
 
 https://docs.google.com/document/d/1inK3CTUDMcaNuPEN5aX_RD4ttKF2ogY_/edit?usp=sharing&ouid=104970222914596366601&rtpof=true&sd=true
 
-I have scraped the data from Twitter here using Streamlit.
+Using the app I created using Streamlit, I 
 There's also buttons given to download the output in JSON or CSV
 
 Note - requirement.txt contains the versions of modules used.
