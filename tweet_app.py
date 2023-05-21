@@ -68,12 +68,12 @@ if scrape_button or st.session_state.scrape_state:
                     tweets.append(data)         
 
 # progress bar
-    progress_text = "Operation in progress. Please wait."
+progress_text = "Operation in progress. Please wait."
 #     my_bar = st.progress(0, text=progress_text)
 #     for percent_complete in range(100):
 #         time.sleep(0.01)
 #         my_bar.progress(percent_complete + 1, text=progress_text)
-    st.success('Done . . .')
+st.success('Done . . .')
 
 # Convert the scraped data into Data frame, csv, json, dictionary
 df = pd.DataFrame(tweets, columns=(['Date', 'User ID', 'URL', 'Tweet content', 'User Name','Reply count',
