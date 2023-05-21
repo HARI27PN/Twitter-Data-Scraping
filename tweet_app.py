@@ -14,7 +14,7 @@ st.title('**:blue[Twitter Scraper]**')
 st.subheader('Enter the Details you want to Scrap')
 
 #2 selection :-keyword or Hashtag...........
-selection = st.selectbox('Select your option.',('Keyword.', 'Hashtag.',))
+selection = st.selectbox('Select your option.',('Keyword', 'Hashtag',))
 if selection == 'Keyword.':
     word = st.text_input('''You selected Keyword, don't use '# 'before the Keyword.''', 'India')
 else:
@@ -23,12 +23,12 @@ else:
 #3 select from date and to date........
 col1, col2, = st.columns(2)
 with col1:
-    start_date = st.date_input('Select the Start date.', date.today() - timedelta(days = 100))
+    startdate = st.date_input('Select the Start date.', date.today() - timedelta(days = 100))
 with col2:
-    end_date = st.date_input('Select the End date.',date.today())
+    enddate = st.date_input('Select the End date.',date.today())
 
-#4 Select the count in number min=1 to max=1000....
-count = st.number_input('Number of Tweets,  (Maximum up to **1000**).',min_value=1, max_value=1000,step=10,)
+#4 Select the count in number min=10 to max=1000....
+count = st.number_input('Number of Tweets,  (Maximum up to **1000**).',min_value=10, max_value=1000,step=10,)
 
 #5   #Scrap button col1 below :    #show button col2 below :   # download csv col3 below :  #download json col4  below :
 col1, col4,col5,col6, = st.columns(4)
@@ -51,7 +51,7 @@ if scrape_button or st.session_state.scrape_state:
 
     if word:
         try:
-            if selection == 'Keyword.':
+            if selection == 'Keyword':
                 for i, tweet in enumerate(sntwitter.TwitterSearchScraper(f'{word} lang:en since:{startdate} until:{enddate}').get_items()):
                     if i>count-1:
                         break
@@ -60,7 +60,7 @@ if scrape_button or st.session_state.scrape_state:
                     tweets.append(data)
                 
             else:
-                for i, tweet in enumerate(sntwitter.TwitterSearchScraper(f'{word} lang:en since:{start_date} until:{end_date}').get_items()):
+                for i, tweet in enumerate(sntwitter.TwitterSearchScraper(f'{word} lang:en since:{startdate} until:{enddate}').get_items()):
                     if i>count-1:
                         break
                     data=[tweet.date,tweet.user.id,tweet.url,tweet.rawContent,tweet.user.username, tweet.replyCount,
