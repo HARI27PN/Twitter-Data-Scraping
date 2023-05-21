@@ -33,7 +33,7 @@ def create_df(tweet_list):
   return tweet_data
 
 # GUI.py
-st.image("twitterbanner.jpg")
+# st.image("twitterbanner.jpg")
 st.title("Scrape the Tweets")
 
 # Get input from user for hashtag
