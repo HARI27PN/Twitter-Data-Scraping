@@ -65,10 +65,8 @@ if scrape_button or st.session_state.scrape_state:
                         break
                     data=[tweet.date,tweet.user.id,tweet.url,tweet.rawContent,tweet.user.username, tweet.replyCount,
                         tweet.retweetCount, tweet.lang, tweet.source, tweet.likeCount,]
-                    tweets.append(data)
-                
-    else:
-        st.warning(selection,' Must enter atleast one word', icon = "⚠️")
+                    tweets.append(data)         
+
 # progress bar
     progress_text = "Operation in progress. Please wait."
 #     my_bar = st.progress(0, text=progress_text)
