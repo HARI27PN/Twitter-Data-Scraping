@@ -4,7 +4,7 @@ from pymongo import MongoClient
 import json
 import base64
 import streamlit as st
-import plotly.express as px
+# import plotly.express as px
 
 #function.py
 
